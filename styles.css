@@ -74,7 +74,8 @@ body {
   right: -1.5rem;
   width: 250px;
   height: auto;
-  z-index: 2;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .flower-decoration img {
@@ -100,6 +101,7 @@ body {
 }
 
 .cta-button {
+  z-index: 3;
   background-color: var(--color-detalles);
   color: var(--color-acento);
   font-family: var(--fuente-principal);
@@ -115,7 +117,7 @@ body {
 }
 
 .cta-button:hover {
-  z-index: 2;
+  z-index: 3;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

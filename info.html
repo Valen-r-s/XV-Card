@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación XV Años</title>
+    <link rel="stylesheet" href="./info.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="text-card">
+      <div class="svg-divider top-divider">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path
+            d="M0.00,49.98 C187.92,218.59 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          />
+        </svg>
+      </div>
+
+      <div class="decorated-photo">
+        <img src="./img/juli5.png" alt="Decoración central" />
+      </div>
+
+      <div class="left-line"></div>
+      <div class="right-line"></div>
+
+      <h1 class="title">MIS QUINCE AÑOS</h1>
+
+      <p class="paragraph">
+        HOY DEJO ATRÁS LOS RECUERDOS DE MI<br />
+        NIÑEZ PARA DAR PASO A NUEVOS SUEÑOS,<br />
+        APRENDIZAJES Y CAMINOS POR DESCUBRIR.
+      </p>
+
+      <p class="paragraph">
+        HACE QUINCE AÑOS, MIS PADRES CELEBRARON MI LLEGADA CON GRATITUD A
+        DIOS.<br />
+        HOY SOY YO QUIEN AGRADECE A DIOS POR ELLOS,<br />
+        POR SU AMOR INCONDICIONAL, SU GUÍA Y SUS VALIOSOS CONSEJOS.
+      </p>
+
+      <p class="paragraph">
+        CUMPLIR 15 AÑOS ES UN MOMENTO ESPECIAL,<br />
+        Y QUIERO CELEBRARLO RODEADA DE QUIENES MÁS QUIERO.
+      </p>
+
+      <p class="final">
+        TU COMPAÑÍA HARÁ DE ESTA NOCHE UN<br />
+        RECUERDO INOLVIDABLE.
+      </p>
+
+      <div class="countdown" id="countdown">
+        <!-- JS rellenará aquí -->
+      </div>
+      <div class="svg-divider">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path
+            d="M0.00,49.98 C187.92,218.59 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          />
+        </svg>
+      </div>
+      <div class="full-width-photo">
+        <img src="./img/Juli2.png" alt="Imagen decorativa final" />
+      </div>
+      <div class="svg-divider bottom-divider">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path
+            d="M0.00,49.98 C187.92,218.59 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          />
+        </svg>
+      </div>
+      <section class="info-section">
+        <div class="info-lines"></div>
+        <h2 class="info-date">JUNIO | SÁBADO 28 | 2025</h2>
+
+        <div class="info-block">
+          <img src="./img/church.png" alt="Iglesia" />
+          <div class="info-text">
+            <h3>EUCARISTÍA</h3>
+            <p class="direccion">DIRECCIÓN</p>
+            <p>6:30PM</p>
+            <a href="#" class="map-button">VER MAPA</a>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <img src="./img/reception.png" alt="Recepción" />
+          <div class="info-text">
+            <h3>RECEPCIÓN</h3>
+            <p class="direccion">DIRECCIÓN</p>
+            <p>7:30PM</p>
+            <a href="#" class="map-button">VER MAPA</a>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <img src="./img/DressCode.png" alt="Dress Code" />
+          <div class="info-text">
+            <h3>DRESS CODE</h3>
+            <p>FORMAL</p>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <img src="./img/gift.png" alt="Regalo" />
+          <div class="info-text">
+            <h3>REGALO</h3>
+            <p>LLUVIA DE SOBRES</p>
+          </div>
+        </div>
+
+        <div class="confirmar">
+          <a href="#" class="confirm-button">CONFIRMAR ASISTENCIA</a>
+        </div>
+      </section>
+      <section class="media-section">
+        <div class="media-image">
+          <img src="./img/decorative.png" alt="Decoración especial" />
+        </div>
+
+        <div class="media-video-ratio">
+          <video autoplay muted loop playsinline>
+            <source src="./img/Juli3Video.mp4" type="video/mp4" />
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+        <p class="te-esperamos">¡Te espero!</p>
+      </section>
+      <div class="svg-divider wide-end-divider">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path
+            d="M0.00,49.98 C93.11,-28.11 335.21,237.34 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          />
+        </svg>
+      </div>
+
+      <div class="full-width-photo end-photo">
+        <img src="./img/Juli4.png" alt="Decoración final" />
+      </div>
+    </div>
+
+    <script>
+      const countdown = document.getElementById("countdown");
+      const deadline = new Date("2025-06-28T00:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = deadline - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = `
+  <div class="time-box"><span>${String(days).padStart(
+    2,
+    "0"
+  )}</span><small>Días</small></div>
+  <div class="separator">:</div>
+  <div class="time-box"><span>${String(hours).padStart(
+    2,
+    "0"
+  )}</span><small>Horas</small></div>
+  <div class="separator">:</div>
+  <div class="time-box"><span>${String(minutes).padStart(
+    2,
+    "0"
+  )}</span><small>Minutos</small></div>
+  <div class="separator">:</div>
+  <div class="time-box"><span>${String(seconds).padStart(
+    2,
+    "0"
+  )}</span><small>Segundos</small></div>
+`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
+  </body>
+</html>

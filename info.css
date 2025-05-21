@@ -1,0 +1,367 @@
+:root {
+  --color-principal: #76503c;
+  --color-acento: #9d646b;
+  --color-fondo: #fffaf7;
+  --color-detalles: #fad6bf;
+  --fuente-principal: "Montserrat", sans-serif;
+  --fuente-secundaria: "Pinyon Script", cursive;
+}
+
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.text-card {
+  background: white;
+  position: relative;
+  padding: 0rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+  overflow: hidden; /* Para que el contenido no desborde fuera */
+}
+
+/* foto superior */
+.decorated-photo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.decorated-photo img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: 2px solid var(--color-detalles);
+  border-left: 2px solid var(--color-detalles);
+  border-right: 2px solid var(--color-detalles);
+  border-top: 2px solid var(--color-detalles);
+}
+
+/* Líneas decorativas laterales */
+.left-line,
+.right-line {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 2px solid var(--color-detalles);
+}
+
+.left-line {
+  top: 0;
+  left: 0;
+  height: 50%;
+}
+
+.right-line {
+  bottom: 0;
+  right: 0;
+  height: 50%;
+}
+
+/* Texto */
+.title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-acento);
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.paragraph {
+  font-size: 0.8rem;
+  color: var(--color-principal);
+  line-height: 1.8;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.final {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-principal);
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Separator */
+.svg-divider,
+.full-width-photo {
+  position: relative;
+  left: -2rem; /* compensar padding izquierdo */
+  width: calc(100% + 4rem); /* compensar ambos lados */
+  margin: 0;
+}
+
+.svg-divider svg {
+  height: 100px;
+  width: 100%;
+  display: block;
+}
+
+.svg-divider path {
+  stroke: none;
+  fill: var(--color-detalles);
+}
+
+.bottom-divider {
+  transform: rotate(180deg);
+  margin-bottom: -1px; /* evita espacios visibles por la curva */
+}
+
+/* Full-width photo */
+
+.full-width-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* Top Divider */
+.top-divider {
+  position: relative;
+  left: -2rem; /* ajusta al padding horizontal de .text-card */
+  width: calc(100% + 4rem);
+  height: 80px; /* puedes ajustar la altura visual */
+  overflow: hidden;
+  transform: rotate(180deg);
+  margin-bottom: -1px; /* elimina separación visual con el contenido */
+}
+
+/* Info Section */
+.info-section {
+  background-color: white;
+  padding: 3rem 2rem;
+  margin-top: 0;
+  text-align: center;
+  border-radius: 0 0 4px 4px;
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.info-date {
+  font-size: 1rem;
+  color: var(--color-principal);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+}
+
+.info-block {
+  display: flex;
+  align-items: center; /* Centra ícono verticalmente */
+  justify-content: center; /* Centra el bloque en la card */
+  gap: 1.5rem;
+  margin: 1.5rem auto;
+  width: 100%;
+  max-width: 400px; /* Misma anchura para todos */
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.info-block img {
+  width: 100px;
+  height: auto;
+  display: block;
+  flex-shrink: 0; /* Evita que el ícono se reduzca */
+}
+
+.info-text {
+  flex: 1; /* Ocupar el resto del espacio */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.info-text h3 {
+  font-size: 0.9rem;
+  color: var(--color-acento);
+  font-weight: bold;
+  margin: 0;
+}
+
+.info-text p {
+  font-size: 0.8rem;
+  color: var(--color-principal);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.map-button {
+  display: inline-block;
+  background-color: var(--color-detalles);
+  color: var(--color-acento);
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-top: 0.4rem;
+}
+
+.confirmar {
+  margin-top: 2.5rem;
+}
+
+.confirm-button {
+  background-color: var(--color-detalles);
+  color: var(--color-acento);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* video */
+/* Sección contenedora */
+.media-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Imagen centrada */
+.media-image img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Contenedor para mantener relación 16:9 */
+.media-video-ratio {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 9 / 16;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo del video */
+.media-video-ratio video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  background-color: #000;
+}
+
+.te-esperamos {
+  font-family: var(--fuente-secundaria);
+  font-size: 4rem;
+  font-weight: lighter;
+  color: var(--color-acento);
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Last section */
+.wide-end-divider {
+  position: relative;
+  left: -2rem;
+  width: calc(100% + 4rem);
+  overflow: hidden;
+  margin: 0;
+}
+
+.wide-end-divider svg {
+  width: 100%;
+  display: block;
+}
+
+.wide-end-divider path {
+  stroke: none;
+  fill: var(--color-detalles); /* o cambia a otro si lo prefieres */
+}
+
+/* Imagen final que completa visualmente la tarjeta */
+.end-photo {
+  position: relative;
+  left: -2rem;
+  width: calc(100% + 4rem);
+  margin: 0;
+  overflow: hidden;
+}
+
+.end-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background-color: var(--color-detalles);
+  color: var(--color-acento);
+  padding: 0rem 0rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  width: 60px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-box span {
+  color: var(--color-acento);
+  font-size: 1.2rem;
+}
+
+.time-box small {
+  font-size: 0.6rem;
+  color: var(--color-acento);
+  margin-top: 0.25rem;
+}
+
+.separator {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-acento);
+  padding: 0 0.3rem;
+}
