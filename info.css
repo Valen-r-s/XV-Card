@@ -31,7 +31,7 @@ body {
   width: 100%;
   text-align: center;
   border-radius: 8px;
-  overflow: hidden; /* Para que el contenido no desborde fuera */
+  overflow: hidden;
 }
 
 /* foto superior */
@@ -183,6 +183,7 @@ body {
   align-items: center; /* Centra horizontalmente todo */
   gap: 0.5rem;
   width: 100%;
+  padding: 1.2rem 0.2rem;
   max-width: 380px;
   box-sizing: border-box;
   background-color: #fff;
@@ -230,7 +231,15 @@ body {
   color: var(--color-acento);
   padding: 0.3rem 0.8rem;
   border-radius: 50px;
+  border: 0.1px solid var(--color-acento);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
   text-decoration: none;
+}
+
+.map-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .confirmar {
@@ -244,9 +253,15 @@ body {
   font-weight: bold;
   padding: 0.6rem 1.5rem;
   border-radius: 50px;
+  border: 0.1px solid var(--color-acento);
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* video */
