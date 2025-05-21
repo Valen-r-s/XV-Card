@@ -105,21 +105,42 @@ body {
   background-color: var(--color-detalles);
   color: var(--color-acento);
   font-family: var(--fuente-principal);
-  font-weight: bold;
+  font-weight: bolder;
   padding: 0.6rem 1.2rem;
   border-radius: 50px;
-  font-size: 0.5rem;
+  border: 0.1px solid var(--color-acento);
+  font-size: 0.6rem;
   display: inline-block;
   text-decoration: none;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: subtle-vibrate-loop 3s infinite ease-in-out;
 }
 
 .cta-button:hover {
   z-index: 3;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes subtle-vibrate-loop {
+  0%,
+  70% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  90% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .name {
