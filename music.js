@@ -15,20 +15,12 @@ function playMusic() {
     });
 }
 
-btn.addEventListener("click", () => {
-  if (!isPlaying) {
-    playMusic();
-  } else {
-    music.pause();
-    btn.innerHTML = "🔊";
-    isPlaying = false;
-  }
-});
+function pauseMusic() {
+  music.pause();
+  btn.innerHTML = "🔊";
+  isPlaying = false;
+}
 
-window.addEventListener("DOMContentLoaded", () => {
-  const shouldPlay = localStorage.getItem("playMusic");
-  if (shouldPlay === "true") {
-    playMusic();
-    localStorage.removeItem("playMusic");
-  }
+btn.addEventListener("click", () => {
+  isPlaying ? pauseMusic() : playMusic();
 });

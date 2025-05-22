@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      #music-toggle {
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #fad6bf;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="content-frame" src="./index.html"></iframe>
+
+    <button id="music-toggle">🔊</button>
+
+    <audio id="bg-music" loop>
+      <source src="./media/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      const btn = document.getElementById("music-toggle");
+      const music = document.getElementById("bg-music");
+      let isPlaying = false;
+
+      function playMusic() {
+        music.volume = 1.0;
+        music
+          .play()
+          .then(() => {
+            btn.innerHTML = "🔈";
+            isPlaying = true;
+          })
+          .catch((err) => {
+            console.log("Autoplay bloqueado hasta interacción:", err);
+          });
+      }
+
+      function pauseMusic() {
+        music.pause();
+        btn.innerHTML = "🔊";
+        isPlaying = false;
+      }
+
+      btn.addEventListener("click", () => {
+        isPlaying ? pauseMusic() : playMusic();
+      });
+
+      // Manejar cambio de vista desde dentro del iframe
+      window.addEventListener("message", (event) => {
+        if (event.data === "goToInfo") {
+          document.getElementById("content-frame").src = "./info.html";
+        }
+      });
+    </script>
+  </body>
+</html>

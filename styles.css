@@ -102,6 +102,7 @@ body {
 }
 
 .cta-button {
+  cursor: pointer;
   z-index: 3;
   background-color: var(--color-detalles);
   color: var(--color-acento);
