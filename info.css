@@ -122,9 +122,38 @@ body {
   fill: var(--color-detalles);
 }
 
+.center-divider {
+  position: relative;
+  z-index: 5;
+  margin-bottom: -50px; /* Lo empuja hacia abajo */
+  height: 80px;
+  left: -2rem;
+  width: calc(100% + 4rem);
+}
+
+.center-divider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .bottom-divider {
   transform: rotate(180deg);
-  margin-bottom: -1px; /* evita espacios visibles por la curva */
+  margin-bottom: -1px;
+}
+
+.bottom-divider {
+  position: relative;
+  z-index: 5;
+  margin-bottom: -1rem;
+  height: 60px;
+  left: -2rem;
+  width: calc(100% + 4rem);
+}
+.bottom-divider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Full-width photo */
@@ -163,7 +192,7 @@ body {
 }
 
 .info-date {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--color-principal);
   font-weight: 600;
   letter-spacing: 1px;
@@ -242,8 +271,12 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.confirmar {
-  margin-top: 2.5rem;
+.confirmar p {
+  font-weight: normal;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-principal);
+  margin-bottom: 2rem;
 }
 
 .confirm-button {
@@ -316,20 +349,22 @@ body {
 /* Last section */
 .wide-end-divider {
   position: relative;
+  z-index: 5;
+  margin-bottom: -50px;
+  height: 80px;
   left: -2rem;
   width: calc(100% + 4rem);
-  overflow: hidden;
-  margin: 0;
 }
 
 .wide-end-divider svg {
-  width: 100%;
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .wide-end-divider path {
   stroke: none;
-  fill: var(--color-detalles); /* o cambia a otro si lo prefieres */
+  fill: var(--color-detalles);
 }
 
 /* Imagen final que completa visualmente la tarjeta */
