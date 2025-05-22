@@ -1,29 +1,27 @@
 window.addEventListener("load", () => {
   const scrollTarget = document.body.scrollHeight;
-  const scrollDuration = 100000; // duración de bajada
-  const scrollUpDuration = 2000; // duración de subida
+  const scrollDuration = 80000;
   const start = window.scrollY;
   const startTime = performance.now();
-  let userScrolled = false;
-  let scrollDownCanceled = false;
 
-  // Detectar interacción del usuario
+  let userScrolled = false;
+  let animationFrame;
+
   function cancelScrollOnUserInput() {
     userScrolled = true;
+    if (animationFrame) cancelAnimationFrame(animationFrame);
   }
 
+  // 🔐 Escucha eventos de usuario desde el principio
   window.addEventListener("wheel", cancelScrollOnUserInput, { passive: true });
   window.addEventListener("touchstart", cancelScrollOnUserInput, {
     passive: true,
   });
-  window.addEventListener("keydown", cancelScrollOnUserInput); // para usuarios con teclado
+  window.addEventListener("keydown", cancelScrollOnUserInput);
+  window.addEventListener("pointerdown", cancelScrollOnUserInput);
 
-  // Scroll hacia abajo (lineal)
-  function scrollDown(currentTime) {
-    if (userScrolled) {
-      scrollDownCanceled = true;
-      return;
-    }
+  function smoothScroll(currentTime) {
+    if (userScrolled) return;
 
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / scrollDuration, 1);
@@ -31,32 +29,33 @@ window.addEventListener("load", () => {
     window.scrollTo(0, start + (scrollTarget - start) * progress);
 
     if (progress < 1) {
-      requestAnimationFrame(scrollDown);
-    } else if (!scrollDownCanceled) {
-      // Después de llegar al fondo, subir
-      const returnStart = window.scrollY;
-      const returnStartTime = performance.now();
+      animationFrame = requestAnimationFrame(smoothScroll);
+    } else {
+      // 🕒 Esperar 2 segundos antes de volver arriba
+      setTimeout(() => {
+        const upStart = window.scrollY;
+        const upStartTime = performance.now();
 
-      function scrollUp(currentTime) {
-        if (userScrolled) return;
+        function scrollUp(currentTime) {
+          if (userScrolled) return;
 
-        const elapsedUp = currentTime - returnStartTime;
-        const progressUp = Math.min(elapsedUp / scrollUpDuration, 1);
+          const elapsedUp = currentTime - upStartTime;
+          const progressUp = Math.min(elapsedUp / 1000, 1);
 
-        window.scrollTo(0, returnStart - returnStart * progressUp);
+          window.scrollTo(0, upStart - upStart * progressUp);
 
-        if (progressUp < 1) {
-          requestAnimationFrame(scrollUp);
+          if (progressUp < 1) {
+            animationFrame = requestAnimationFrame(scrollUp);
+          }
         }
-      }
 
-      requestAnimationFrame(scrollUp);
+        animationFrame = requestAnimationFrame(scrollUp);
+      }, 1000);
     }
   }
-
   setTimeout(() => {
     if (!userScrolled) {
-      requestAnimationFrame(scrollDown);
+      animationFrame = requestAnimationFrame(smoothScroll);
     }
   }, 0.1);
 });
