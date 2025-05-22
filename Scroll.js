@@ -78,7 +78,7 @@ scrollBtn.addEventListener("click", () => {
     cancelScroll(); // si está activo, detener
   } else {
     scrollActive = true;
-    scrollBtn.innerHTML = "⏸";
+    scrollBtn.innerHTML = "||";
     smoothScrollToBottomAndBack(); // si está pausado, iniciar desde donde está
   }
 });

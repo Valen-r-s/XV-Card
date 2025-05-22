@@ -7,7 +7,7 @@ function playMusic() {
   music
     .play()
     .then(() => {
-      btn.innerHTML = "🔈";
+      btn.innerHTML = "🎵";
       isPlaying = true;
     })
     .catch((err) => {
@@ -17,7 +17,7 @@ function playMusic() {
 
 function pauseMusic() {
   music.pause();
-  btn.innerHTML = "🔊";
+  btn.innerHTML = "🎵";
   isPlaying = false;
 }
 
