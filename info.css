@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
 :root {
   --color-principal: #76503c;
   --color-acento: #9d646b;
@@ -76,27 +78,28 @@ body {
 
 /* Texto */
 .title {
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 550;
+  font-size: 1.6rem;
+  font-family: "Great Vibes", cursive;
   color: var(--color-acento);
   letter-spacing: 1px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .paragraph {
-  font-size: 0.8rem;
+  font-size: 1.4rem;
   color: var(--color-principal);
+  font-family: "Great Vibes", cursive;
+  font-weight: lighter;
   line-height: 1.8;
-  text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
 
 .final {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: lighter;
   color: var(--color-principal);
-  font-style: italic;
-  text-transform: uppercase;
+  font-weight: 500;
   margin-top: 2rem;
   margin-bottom: 2.5rem;
 }
@@ -150,6 +153,7 @@ body {
   left: -2rem;
   width: calc(100% + 4rem);
 }
+
 .bottom-divider svg {
   display: block;
   width: 100%;
@@ -274,7 +278,7 @@ body {
 .confirmar p {
   font-weight: normal;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 550;
   color: var(--color-principal);
   margin-bottom: 2rem;
 }
