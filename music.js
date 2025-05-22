@@ -11,7 +11,7 @@ function playMusic() {
       isPlaying = true;
     })
     .catch((err) => {
-      console.log("Error de reproducción:", err);
+      console.log("Error al reproducir música:", err);
     });
 }
 
@@ -25,11 +25,10 @@ btn.addEventListener("click", () => {
   }
 });
 
-// ✅ Detectar si se debe reproducir automáticamente
 window.addEventListener("DOMContentLoaded", () => {
   const shouldPlay = localStorage.getItem("playMusic");
   if (shouldPlay === "true") {
     playMusic();
-    localStorage.removeItem("playMusic"); // lo usamos solo una vez
+    localStorage.removeItem("playMusic");
   }
 });
