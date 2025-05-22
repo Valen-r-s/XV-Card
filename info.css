@@ -10,7 +10,6 @@
 }
 
 * {
-  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -90,16 +89,16 @@ body {
   font-size: 1.4rem;
   color: var(--color-principal);
   font-family: "Great Vibes", cursive;
-  font-weight: lighter;
+  font-weight: normal;
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
 .final {
-  font-size: 1rem;
-  font-weight: lighter;
-  color: var(--color-principal);
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-family: "Great Vibes", cursive;
+  color: var(--color-acento);
+  font-weight: 550;
   margin-top: 2rem;
   margin-bottom: 2.5rem;
 }
@@ -437,16 +436,16 @@ body {
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 2.5rem;
   }
 
   .paragraph {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 
   .final {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .info-block img {
@@ -464,6 +463,10 @@ body {
 
   .time-box small {
     font-size: 0.8rem;
+  }
+
+  .info-date {
+    font-size: 1rem;
   }
 
   .separator {
