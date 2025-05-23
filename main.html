@@ -69,9 +69,13 @@
         isPlaying ? pauseMusic() : playMusic();
       });
 
-      // Manejar cambio de vista desde dentro del iframe
       window.addEventListener("message", (event) => {
         if (event.data === "goToInfo") {
+          document.getElementById("content-frame").src = "./info.html";
+        }
+
+        if (event.data === "playMusicAndGoToInfo") {
+          playMusic(); // activa la música desde main
           document.getElementById("content-frame").src = "./info.html";
         }
       });
